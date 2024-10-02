@@ -1,0 +1,47 @@
+<main>
+	<h1>Animals List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Origin</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let animal of animals">
+				<td>{{ animal.id }}</td>
+				<td>{{ animal.name }}</td>
+				<td>{{ animal.origin }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<label for="id">Id:</label>
+		<input
+			type="text"
+			id="id"
+			[(ngModel)]="id"
+			name="id"
+			required />
+	</div>
+	<div>
+		<label for="name">Name:</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name"
+			name="name"
+			required />
+	</div>
+	<div>
+		<label for="origin">Origin:</label>
+		<input
+			type="text"
+			id="origin"
+			[(ngModel)]="origin"
+			name="origin"
+			required />
+	</div>
+	<button (click)="addAnimal()">Add Animal</button>
+</main>
