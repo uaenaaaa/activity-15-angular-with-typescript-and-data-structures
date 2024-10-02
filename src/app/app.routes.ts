@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentListComponent } from '@app/student-list/student-list.component';
 import { EmployeeListComponent } from '@app/employee-list/employee-list.component';
 import { FruitListComponent } from '@app/fruit-list/fruit-list.component';
+import { CourseListComponent } from '@app/course-list/course-list.component';
 
 export const routes: Routes = [
 	{
@@ -19,6 +20,11 @@ export const routes: Routes = [
 		title: 'Fruit List',
 		component: FruitListComponent,
 		path: 'fruit-list',
+	},
+	{
+		title: 'Course List',
+		component: CourseListComponent,
+		path: 'course-list',
 	},
 ];
 
