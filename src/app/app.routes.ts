@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentListComponent } from '@app/student-list/student-list.component';
+import { EmployeeListComponent } from '@app/employee-list/employee-list.component';
 
 export const routes: Routes = [
 	{
 		title: 'Student List',
 		component: StudentListComponent,
 		path: 'student-list',
+	},
+	{
+		title: 'Employee List',
+		component: EmployeeListComponent,
+		path: 'employee-list',
 	},
 ];
 
