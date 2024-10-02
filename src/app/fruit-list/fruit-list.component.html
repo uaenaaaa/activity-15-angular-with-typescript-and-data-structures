@@ -1,0 +1,69 @@
+<main>
+	<h2>Fruit List</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Quantity</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let fruit of fruits">
+				<td>{{ fruit.id }}</td>
+				<td>{{ fruit.name }}</td>
+				<td>{{ fruit.quantity }}</td>
+				<td>{{ fruit.price }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<h2>Add Fruit</h2>
+	</div>
+
+	<div>
+		<label for="id">Id:</label>
+		<input
+			type="text"
+			id="id"
+			[(ngModel)]="id"
+			name="id"
+			required />
+	</div>
+
+	<div>
+		<label for="name">Name:</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name"
+			name="name"
+			required />
+	</div>
+	<div>
+		<label for="color">Quantity</label>
+		<input
+			type="text"
+			id="color"
+			[(ngModel)]="quantity"
+			name="color"
+			required />
+	</div>
+	<div>
+		<label for="weight">Price:</label>
+		<input
+			type="number"
+			id="weight"
+			[(ngModel)]="price"
+			name="weight"
+			required />
+	</div>
+	<div>
+		<button
+			class="btn btn-primary"
+			(click)="addFruit()">
+			Add Fruit
+		</button>
+	</div>
+</main>
