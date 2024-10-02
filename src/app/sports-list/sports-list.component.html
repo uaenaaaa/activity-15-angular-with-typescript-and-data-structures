@@ -1,0 +1,47 @@
+<main>
+	<h1>Sports List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Team</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let sport of sports">
+				<td>{{ sport.id }}</td>
+				<td>{{ sport.name }}</td>
+				<td>{{ sport.team }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<label for="id">Id:</label>
+		<input
+			type="text"
+			id="id"
+			[(ngModel)]="id"
+			name="id"
+			required />
+	</div>
+	<div>
+		<label for="name">Name:</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name"
+			name="name"
+			required />
+	</div>
+	<div>
+		<label for="team">Team:</label>
+		<input
+			type="text"
+			id="team"
+			[(ngModel)]="team"
+			name="team"
+			required />
+	</div>
+	<button (click)="addSport()">Add Sport</button>
+</main>
