@@ -1,0 +1,76 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Movie List</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Movie ID</th>
+							<th>Movie Name</th>
+							<th>Director</th>
+							<th>Year</th>
+							<th>Rating</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let movie of movies">
+							<td>{{ movie.id }}</td>
+							<td>{{ movie.name }}</td>
+							<td>{{ movie.director }}</td>
+							<td>{{ movie.year }}</td>
+							<td>{{ movie.rating }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div>
+			<label for=""></label>
+			<input
+				type="text"
+				class="form-control"
+				placeholder="Movie ID"
+				[(ngModel)]="id" />
+		</div>
+		<div>
+			<label for=""></label>
+			<input
+				type="text"
+				class="form-control"
+				placeholder="Movie Name"
+				[(ngModel)]="name" />
+		</div>
+		<div>
+			<label for=""></label>
+			<input
+				type="text"
+				class="form-control"
+				placeholder="Director"
+				[(ngModel)]="director" />
+		</div>
+		<div>
+			<label for=""></label>
+			<input
+				type="number"
+				class="form-control"
+				placeholder="Year"
+				[(ngModel)]="year" />
+		</div>
+		<div>
+			<label for=""></label>
+			<input
+				type="number"
+				class="form-control"
+				placeholder="Rating"
+				[(ngModel)]="rating" />
+		</div>
+		<div>
+			<button
+				class="btn btn-primary"
+				(click)="addMovie()">
+				Add Movie
+			</button>
+		</div>
+	</div>
+</main>
