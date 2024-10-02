@@ -1,0 +1,52 @@
+<!-- export default interface Subject {
+	id: number;
+	name: string;
+	teacher: string;
+} -->
+<main>
+	<h1>Subject List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Teacher</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let subject of subjects">
+				<td>{{ subject.id }}</td>
+				<td>{{ subject.name }}</td>
+				<td>{{ subject.teacher }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<label for="id">Id:</label>
+		<input
+			type="text"
+			id="id"
+			[(ngModel)]="id"
+			name="id"
+			required />
+	</div>
+	<div>
+		<label for="name">Name:</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name"
+			name="name"
+			required />
+	</div>
+	<div>
+		<label for="teacher">Teacher:</label>
+		<input
+			type="text"
+			id="teacher"
+			[(ngModel)]="teacher"
+			name="teacher"
+			required />
+	</div>
+	<button (click)="addSubject()">Add Subject</button>
+</main>
