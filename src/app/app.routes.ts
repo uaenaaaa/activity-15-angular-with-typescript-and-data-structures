@@ -8,8 +8,9 @@ import { BookListComponent } from '@app/book-list/book-list.component';
 import { CityListComponent } from '@app/city-list/city-list.component';
 import { MovieListComponent } from '@app/movie-list/movie-list.component';
 import { CarModelListComponent } from '@app/car-model-list/card-mode-list.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { SubjectListComponent } from './subject-list/subject-list.component';
+import { ProductListComponent } from '@app/product-list/product-list.component';
+import { SubjectListComponent } from '@app/subject-list/subject-list.component';
+import { CountryListComponent } from '@app/country-list/country-list.component';
 
 export const routes: Routes = [
 	{
@@ -61,6 +62,11 @@ export const routes: Routes = [
 		title: 'Subject List',
 		component: SubjectListComponent,
 		path: 'subject-list',
+	},
+	{
+		title: 'Country List',
+		component: CountryListComponent,
+		path: 'country-list',
 	},
 ];
 
