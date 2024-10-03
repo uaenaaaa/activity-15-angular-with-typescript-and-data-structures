@@ -1,0 +1,83 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Flower List</h1>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Description</th>
+							<th>Price</th>
+							<th>Is Available</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let flower of flowerList">
+							<td>{{ flower.id }}</td>
+							<td>{{ flower.name }}</td>
+							<td>{{ flower.description }}</td>
+							<td>{{ flower.price }}</td>
+							<td>{{ flower.isAvailable }}</td>
+							<td>{{ flower.quantity }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="id">ID</label>
+			<input
+				type="text"
+				id="id"
+				name="id"
+				[(ngModel)]="id" />
+		</div>
+		<div>
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				[(ngModel)]="name" />
+		</div>
+		<div>
+			<label for="description">Description</label>
+			<input
+				type="text"
+				id="description"
+				name="description"
+				[(ngModel)]="description" />
+		</div>
+		<div>
+			<label for="price">Price</label>
+			<input
+				type="text"
+				id="price"
+				name="price"
+				[(ngModel)]="price" />
+		</div>
+		<div>
+			<label for="isAvailable">Is Available</label>
+			<input
+				type="text"
+				id="isAvailable"
+				name="isAvailable"
+				[(ngModel)]="isAvailable" />
+		</div>
+		<div>
+			<label for="quantity">Quantity</label>
+			<input
+				type="text"
+				id="quantity"
+				name="quantity"
+				[(ngModel)]="quantity" />
+		</div>
+		<div>
+			<button (click)="addFlower()">Add Flower</button>
+		</div>
+	</div>
+</main>
