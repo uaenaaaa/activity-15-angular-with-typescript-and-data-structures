@@ -1,0 +1,66 @@
+<main>
+	<div class="container">
+		<h1>TV Show List</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>URL</th>
+					<th>Rating</th>
+					<th>Category</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let tvShow of tvShowList">
+					<td>{{ tvShow.name }}</td>
+					<td>{{ tvShow.description }}</td>
+					<td>{{ tvShow.url }}</td>
+					<td>{{ tvShow.rating }}</td>
+					<td>{{ tvShow.category }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<label for="name">Name</label>
+		<input
+			type="text"
+			id="name"
+			name="name"
+			[(ngModel)]="name" />
+	</div>
+	<div>
+		<label for="description">Description</label>
+		<input
+			type="text"
+			id="description"
+			name="description"
+			[(ngModel)]="description" />
+	</div>
+	<div>
+		<label for="url">URL</label>
+		<input
+			type="text"
+			id="url"
+			name="url"
+			[(ngModel)]="url" />
+	</div>
+	<div>
+		<label for="rating">Rating</label>
+		<input
+			type="number"
+			id="rating"
+			name="rating"
+			[(ngModel)]="rating" />
+	</div>
+	<div>
+		<label for="category">Category</label>
+		<input
+			type="text"
+			id="category"
+			name="category"
+			[(ngModel)]="category" />
+	</div>
+	<button (click)="addTvShow()">Add TV Show</button>
+</main>
