@@ -1,0 +1,63 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Grocery List</h1>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let grocery of groceryList">
+							<td>{{ grocery.id }}</td>
+							<td>{{ grocery.name }}</td>
+							<td>{{ grocery.price }}</td>
+							<td>{{ grocery.description }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="id">ID</label>
+			<input
+				type="text"
+				id="id"
+				name="id"
+				[(ngModel)]="id" />
+		</div>
+		<div>
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				[(ngModel)]="name" />
+		</div>
+		<div>
+			<label for="price">Price</label>
+			<input
+				type="text"
+				id="price"
+				name="price"
+				[(ngModel)]="price" />
+		</div>
+		<div>
+			<label for="description">Description</label>
+			<input
+				type="text"
+				id="description"
+				name="description"
+				[(ngModel)]="description" />
+		</div>
+		<div>
+			<button (click)="addGrocery()">Add Grocery</button>
+		</div>
+	</div>
+</main>
