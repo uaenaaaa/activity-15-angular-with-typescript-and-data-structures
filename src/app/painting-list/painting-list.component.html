@@ -1,0 +1,53 @@
+<main>
+	<h1>Painting List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Artist</th>
+				<th>Year</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let painting of paintingList">
+				<td>{{ painting.title }}</td>
+				<td>{{ painting.artist }}</td>
+				<td>{{ painting.year }}</td>
+				<td>{{ painting.price }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<div>
+			<label for="title">Title:</label>
+			<input
+				type="text"
+				id="title"
+				[(ngModel)]="title" />
+		</div>
+		<div>
+			<label for="artist">Artist:</label>
+			<input
+				type="text"
+				id="artist"
+				[(ngModel)]="artist" />
+		</div>
+		<div>
+			<label for="year">Year:</label>
+			<input
+				type="number"
+				id="year"
+				[(ngModel)]="year" />
+		</div>
+		<div>
+			<label for="price">Price:</label>
+			<input
+				type="number"
+				id="price"
+				[(ngModel)]="price" />
+		</div>
+		<button (click)="addPainting()">Add Painting</button>
+	</div>
+</main>
