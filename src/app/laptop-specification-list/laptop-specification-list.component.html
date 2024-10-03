@@ -1,0 +1,69 @@
+<main>
+	<h1>Laptop Specification List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Model</th>
+				<th>Processor</th>
+				<th>RAM</th>
+				<th>Storage</th>
+				<th>Display</th>
+				<th>Graphics</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let laptop of laptops">
+				<td>{{ laptop.model }}</td>
+				<td>{{ laptop.specs.processor }}</td>
+				<td>{{ laptop.specs.ram }}</td>
+				<td>{{ laptop.specs.storage }}</td>
+				<td>{{ laptop.specs.display }}</td>
+				<td>{{ laptop.specs.graphics }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="model">Model:</label>
+		<input
+			type="text"
+			id="model"
+			[(ngModel)]="model" />
+	</div>
+	<div>
+		<label for="processor">Processor:</label>
+		<input
+			type="text"
+			id="processor"
+			[(ngModel)]="processor" />
+	</div>
+	<div>
+		<label for="ram">RAM:</label>
+		<input
+			type="text"
+			id="ram"
+			[(ngModel)]="ram" />
+	</div>
+	<div>
+		<label for="storage">Storage:</label>
+		<input
+			type="text"
+			id="storage"
+			[(ngModel)]="storage" />
+	</div>
+	<div>
+		<label for="display">Display:</label>
+		<input
+			type="text"
+			id="display"
+			[(ngModel)]="display" />
+	</div>
+	<div>
+		<label for="graphics">Graphics:</label>
+		<input
+			type="text"
+			id="graphics"
+			[(ngModel)]="graphics" />
+	</div>
+	<button (click)="addLaptop()">Add Laptop</button>
+</main>
