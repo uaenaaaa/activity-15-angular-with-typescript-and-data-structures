@@ -1,0 +1,80 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1>Tool List</h1>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Description</th>
+							<th>Price</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let tool of tools">
+							<td>{{ tool.id }}</td>
+							<td>{{ tool.name }}</td>
+							<td>{{ tool.description }}</td>
+							<td>{{ tool.price }}</td>
+							<td>{{ tool.quantity }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div>
+			<label for="id"> ID </label>
+			<input
+				id="id"
+				type="number"
+				class="form-control"
+				[(ngModel)]="id" />
+		</div>
+		<div>
+			<label for="name"> Name </label>
+			<input
+				id="name"
+				type="text"
+				class="form-control"
+				[(ngModel)]="name" />
+		</div>
+
+		<div>
+			<label for="description"> Description </label>
+			<input
+				id="description"
+				type="text"
+				class="form-control"
+				[(ngModel)]="description" />
+		</div>
+
+		<div>
+			<label for="price"> Price </label>
+			<input
+				id="price"
+				type="number"
+				class="form-control"
+				[(ngModel)]="price" />
+		</div>
+
+		<div>
+			<label for="quantity"> Quantity </label>
+			<input
+				id="quantity"
+				type="number"
+				class="form-control"
+				[(ngModel)]="quantity" />
+		</div>
+
+		<div>
+			<button
+				class="btn btn-primary"
+				(click)="addTool()">
+				Add Tool
+			</button>
+		</div>
+	</div>
+</main>
