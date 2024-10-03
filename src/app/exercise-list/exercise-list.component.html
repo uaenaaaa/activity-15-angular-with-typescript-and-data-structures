@@ -1,0 +1,53 @@
+<!--  -->
+<main>
+	<h1>Exercise List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Sets</th>
+				<th>Reps</th>
+				<th>Weight</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let exercise of exercises">
+				<td>{{ exercise.name }}</td>
+				<td>{{ exercise.sets }}</td>
+				<td>{{ exercise.reps }}</td>
+				<td>{{ exercise.weight }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<label for="name">Name</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name" />
+	</div>
+	<div>
+		<label for="sets">Sets</label>
+		<input
+			type="number"
+			id="sets"
+			[(ngModel)]="sets" />
+	</div>
+	<div>
+		<label for="reps">Reps</label>
+		<input
+			type="number"
+			id="reps"
+			[(ngModel)]="reps" />
+	</div>
+	<div>
+		<label for="weight">Weight</label>
+		<input
+			type="number"
+			id="weight"
+			[(ngModel)]="weight" />
+	</div>
+	<div>
+		<button (click)="addExercise()">Add Exercise</button>
+	</div>
+</main>
