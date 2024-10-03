@@ -1,0 +1,56 @@
+<main>
+	<h1>Presentation List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Topic</th>
+				<th>Presenter</th>
+				<th>Date</th>
+				<th>Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let presentation of presentations">
+				<td>{{ presentation.topic }}</td>
+				<td>{{ presentation.presenter }}</td>
+				<td>{{ presentation.date }}</td>
+				<td>{{ presentation.time }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<label for="topic">Topic:</label>
+		<input
+			type="text"
+			id="topic"
+			name="topic"
+			[(ngModel)]="topic" />
+	</div>
+	<div>
+		<label for="presenter">Presenter:</label>
+		<input
+			type="text"
+			id="presenter"
+			name="presenter"
+			[(ngModel)]="presenter" />
+	</div>
+	<div>
+		<label for="date">Date:</label>
+		<input
+			type="date"
+			id="date"
+			name="date"
+			[(ngModel)]="date" />
+	</div>
+	<div>
+		<label for="time">Time:</label>
+		<input
+			type="time"
+			id="time"
+			name="time"
+			[(ngModel)]="time" />
+	</div>
+	<div>
+		<button (click)="addPresentation()">Add Presentation</button>
+	</div>
+</main>
