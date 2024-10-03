@@ -11,11 +11,12 @@ import { CarModelListComponent } from '@app/car-model-list/card-mode-list.compon
 import { ProductListComponent } from '@app/product-list/product-list.component';
 import { SubjectListComponent } from '@app/subject-list/subject-list.component';
 import { CountryListComponent } from '@app/country-list/country-list.component';
-import { SportsListComponent } from './sports-list/sports-list.component';
-import { VegetablesListComponent } from './vegetables-list/vegetables-list.component';
-import { AnimalsListComponent } from './animals-list/animals-list.component';
-import { ToolListComponent } from './tool-list/tool-list.component';
-import { LanguageListComponent } from './language-list/language-list.component';
+import { SportsListComponent } from '@app/sports-list/sports-list.component';
+import { VegetablesListComponent } from '@app/vegetables-list/vegetables-list.component';
+import { AnimalsListComponent } from '@app/animals-list/animals-list.component';
+import { ToolListComponent } from '@app/tool-list/tool-list.component';
+import { LanguageListComponent } from '@app/language-list/language-list.component';
+import { GameListComponent } from '@app/game-list/game-list.component';
 
 export const routes: Routes = [
 	{
@@ -97,6 +98,11 @@ export const routes: Routes = [
 		title: 'Language List',
 		component: LanguageListComponent,
 		path: 'lang-list',
+	},
+	{
+		title: 'Game List',
+		component: GameListComponent,
+		path: 'game-list',
 	},
 ];
 
