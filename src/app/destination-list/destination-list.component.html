@@ -1,0 +1,63 @@
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Destination List</h1>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Description</th>
+							<th>Location</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let destination of destinations">
+							<td>{{ destination.id }}</td>
+							<td>{{ destination.name }}</td>
+							<td>{{ destination.description }}</td>
+							<td>{{ destination.location }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="id">ID</label>
+			<input
+				type="text"
+				id="id"
+				name="id"
+				[(ngModel)]="id" />
+		</div>
+		<div>
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				[(ngModel)]="name" />
+		</div>
+		<div>
+			<label for="description">Description</label>
+			<input
+				type="text"
+				id="description"
+				name="description"
+				[(ngModel)]="description" />
+		</div>
+		<div>
+			<label for="location">Location</label>
+			<input
+				type="text"
+				id="location"
+				name="location"
+				[(ngModel)]="location" />
+		</div>
+		<div>
+			<button (click)="addDestination()">Add Destination</button>
+		</div>
+	</div>
+</main>
