@@ -1,0 +1,78 @@
+<!--  -->
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Event List</h1>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Event Date</th>
+							<th>Event Name</th>
+							<th>Event Location</th>
+							<th>Event Price</th>
+							<th>Event Duration</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let event of events">
+							<td>{{ event.eventDate }}</td>
+							<td>{{ event.eventName }}</td>
+							<td>{{ event.eventLocation }}</td>
+							<td>{{ event.eventPrice }}</td>
+							<td>{{ event.eventDuration }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="date">Date</label>
+			<input
+				type="date"
+				id="date"
+				class="form-control"
+				[(ngModel)]="eventDate" />
+		</div>
+		<div>
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				class="form-control"
+				[(ngModel)]="eventName" />
+		</div>
+		<div>
+			<label for="location">Location</label>
+			<input
+				type="text"
+				id="location"
+				class="form-control"
+				[(ngModel)]="eventLocation" />
+		</div>
+		<div>
+			<label for="price">Price</label>
+			<input
+				type="number"
+				id="price"
+				class="form-control"
+				[(ngModel)]="eventPrice" />
+		</div>
+		<div>
+			<label for="duration">Duration</label>
+			<input
+				type="text"
+				id="duration"
+				class="form-control"
+				[(ngModel)]="eventDuration" />
+		</div>
+		<div>
+			<button
+				class="btn btn-primary"
+				(click)="addEvent()">
+				Add Event
+			</button>
+		</div>
+	</div>
+</main>

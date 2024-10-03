@@ -46,6 +46,7 @@ import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component
 import { BudgetListComponent } from './budget-list/budget-list.component';
 import { PresentationListComponent } from './presentation-list/presentation-list.component';
 import { TourListComponent } from './tour-list/tour-list.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 export const routes: Routes = [
 	{
@@ -277,6 +278,11 @@ export const routes: Routes = [
 		title: 'Tour List',
 		component: TourListComponent,
 		path: 'tour-list',
+	},
+	{
+		title: 'Event List',
+		component: EventListComponent,
+		path: 'event-list',
 	},
 ];
 
