@@ -1,0 +1,57 @@
+<main>
+	<h1>Artist List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Field</th>
+				<th>Genre</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let artist of artistList">
+				<td>{{ artist.name }}</td>
+				<td>{{ artist.field }}</td>
+				<td>{{ artist.genre }}</td>
+				<td>{{ artist.country }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="name">Name</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name" />
+	</div>
+
+	<div>
+		<label for="field">Field</label>
+		<input
+			type="text"
+			id="field"
+			[(ngModel)]="field" />
+	</div>
+
+	<div>
+		<label for="genre">Genre</label>
+		<input
+			type="text"
+			id="genre"
+			[(ngModel)]="genre" />
+	</div>
+
+	<div>
+		<label for="country">Country</label>
+		<input
+			type="text"
+			id="country"
+			[(ngModel)]="country" />
+	</div>
+
+	<div>
+		<button (click)="addArtist()">Add Artist</button>
+	</div>
+</main>

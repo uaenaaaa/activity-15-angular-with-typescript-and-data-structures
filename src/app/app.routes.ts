@@ -38,6 +38,7 @@ import { FurnitureListComponent } from './furniture-list/furniture-list.componen
 import { AccessoryListComponent } from './accessory-list/accessory-list.component';
 import { BuildingListComponent } from './building-list/building-list.component';
 import { PaintingListComponent } from './painting-list/painting-list.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
 
 export const routes: Routes = [
 	{
@@ -229,6 +230,11 @@ export const routes: Routes = [
 		title: 'Paintings List',
 		component: PaintingListComponent,
 		path: 'painting-list',
+	},
+	{
+		title: 'Artist List',
+		component: ArtistListComponent,
+		path: 'artist-list',
 	},
 ];
 
