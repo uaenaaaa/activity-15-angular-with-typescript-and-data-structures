@@ -1,0 +1,75 @@
+<!-- export default interface LectureList {
+	id: number;
+	name: string;
+	duration: number;
+	instructor: string;
+} -->
+<main>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1>Lecture List</h1>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Duration</th>
+							<th>Instructor</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let lecture of lectureList">
+							<td>{{ lecture.id }}</td>
+							<td>{{ lecture.name }}</td>
+							<td>{{ lecture.duration }}</td>
+							<td>{{ lecture.instructor }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<label for="id">ID</label>
+			<input
+				type="text"
+				id="id"
+				[(ngModel)]="id" />
+		</div>
+
+		<div>
+			<label for="name">Name</label>
+			<input
+				type="text"
+				id="name"
+				[(ngModel)]="name" />
+		</div>
+
+		<div>
+			<label for="duration">Duration</label>
+			<input
+				type="text"
+				id="duration"
+				[(ngModel)]="duration" />
+		</div>
+
+		<div>
+			<label for="instructor">Instructor</label>
+			<input
+				type="text"
+				id="instructor"
+				[(ngModel)]="instructor" />
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<button
+					class="btn btn-primary"
+					(click)="addLecture()">
+					Add Lecture
+				</button>
+			</div>
+		</div>
+	</div>
+</main>
