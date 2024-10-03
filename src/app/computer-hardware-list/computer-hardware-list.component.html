@@ -1,0 +1,57 @@
+<main>
+	<h1>Computer Hardware List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Location</th>
+				<th>Type</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let hardware of computerHardware">
+				<td>{{ hardware.name }}</td>
+				<td>{{ hardware.location }}</td>
+				<td>{{ hardware.type }}</td>
+				<td>{{ hardware.price }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="name">Name</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name" />
+	</div>
+
+	<div>
+		<label for="location">Location</label>
+		<input
+			type="text"
+			id="location"
+			[(ngModel)]="location" />
+	</div>
+
+	<div>
+		<label for="type">Type</label>
+		<input
+			type="text"
+			id="type"
+			[(ngModel)]="type" />
+	</div>
+
+	<div>
+		<label for="price">Price</label>
+		<input
+			type="number"
+			id="price"
+			[(ngModel)]="price" />
+	</div>
+
+	<div>
+		<button (click)="addComputerHardware()">Add Computer Hardware</button>
+	</div>
+</main>
