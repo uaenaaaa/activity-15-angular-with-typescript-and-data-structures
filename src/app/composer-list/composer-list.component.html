@@ -1,0 +1,57 @@
+<main>
+	<h1>Composer List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Popular Music</th>
+				<th>Genre</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let composer of composers">
+				<td>{{ composer.name }}</td>
+				<td>{{ composer.popularMusic }}</td>
+				<td>{{ composer.genre }}</td>
+				<td>{{ composer.country }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="name">Name</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name" />
+	</div>
+
+	<div>
+		<label for="popularMusic">Popular Music</label>
+		<input
+			type="text"
+			id="popularMusic"
+			[(ngModel)]="popularMusic" />
+	</div>
+
+	<div>
+		<label for="genre">Genre</label>
+		<input
+			type="text"
+			id="genre"
+			[(ngModel)]="genre" />
+	</div>
+
+	<div>
+		<label for="country">Country</label>
+		<input
+			type="text"
+			id="country"
+			[(ngModel)]="country" />
+	</div>
+
+	<div>
+		<button (click)="addComposer()">Add Composer</button>
+	</div>
+</main>
