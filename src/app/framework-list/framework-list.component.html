@@ -1,0 +1,66 @@
+<!--  -->
+<main>
+	<h1>Framework List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Developed By</th>
+				<th>First Release</th>
+				<th>Latest Release</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let framework of frameworks">
+				<td>{{ framework.name }}</td>
+				<td>{{ framework.description }}</td>
+				<td>{{ framework.developedBy }}</td>
+				<td>{{ framework.firstRelease }}</td>
+				<td>{{ framework.latestRelease }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="name">Name</label>
+		<input
+			type="text"
+			id="name"
+			name="name"
+			[(ngModel)]="name" />
+	</div>
+	<div>
+		<label for="description">Description</label>
+		<input
+			type="text"
+			id="description"
+			name="description"
+			[(ngModel)]="description" />
+	</div>
+	<div>
+		<label for="developedBy">Developed By</label>
+		<input
+			type="text"
+			id="developedBy"
+			name="developedBy"
+			[(ngModel)]="developedBy" />
+	</div>
+	<div>
+		<label for="firstRelease">First Release</label>
+		<input
+			type="text"
+			id="firstRelease"
+			name="firstRelease"
+			[(ngModel)]="firstRelease" />
+	</div>
+	<div>
+		<label for="latestRelease">Latest Release</label>
+		<input
+			type="text"
+			id="latestRelease"
+			name="latestRelease"
+			[(ngModel)]="latestRelease" />
+	</div>
+	<button (click)="addFramework()">Add Framework</button>
+</main>

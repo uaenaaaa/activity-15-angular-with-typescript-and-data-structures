@@ -48,6 +48,7 @@ import { PresentationListComponent } from './presentation-list/presentation-list
 import { TourListComponent } from './tour-list/tour-list.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { DeveloperToolsListComponent } from './developer-tools-list/developer-tools-list.component';
+import { FrameworkListComponent } from './framework-list/framework-list.component';
 
 export const routes: Routes = [
 	{
@@ -289,6 +290,11 @@ export const routes: Routes = [
 		title: 'Developer Tools List',
 		component: DeveloperToolsListComponent,
 		path: 'developer-tool-list',
+	},
+	{
+		title: 'Framework List',
+		component: FrameworkListComponent,
+		path: 'framework-list',
 	},
 ];
 
