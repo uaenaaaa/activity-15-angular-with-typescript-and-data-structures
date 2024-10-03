@@ -1,0 +1,76 @@
+<!--  -->
+<main>
+	<h1>Library List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Library Name</th>
+				<th>Programming Language</th>
+				<th>Description</th>
+				<th>Developed By</th>
+				<th>First Release</th>
+				<th>Latest Release</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let library of libraries">
+				<td>{{ library.libraryName }}</td>
+				<td>{{ library.programmingLanguage }}</td>
+				<td>{{ library.description }}</td>
+				<td>{{ library.developedBy }}</td>
+				<td>{{ library.firstRelease }}</td>
+				<td>{{ library.latestRelease }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="libraryName">Library Name</label>
+		<input
+			type="text"
+			id="libraryName"
+			name="libraryName"
+			[(ngModel)]="libraryName" />
+	</div>
+	<div>
+		<label for="programmingLanguage">Programming Language</label>
+		<input
+			type="text"
+			id="programmingLanguage"
+			name="programmingLanguage"
+			[(ngModel)]="programmingLanguage" />
+	</div>
+	<div>
+		<label for="description">Description</label>
+		<input
+			type="text"
+			id="description"
+			name="description"
+			[(ngModel)]="description" />
+	</div>
+	<div>
+		<label for="developedBy">Developed By</label>
+		<input
+			type="text"
+			id="developedBy"
+			name="developedBy"
+			[(ngModel)]="developedBy" />
+	</div>
+	<div>
+		<label for="firstRelease">First Release</label>
+		<input
+			type="text"
+			id="firstRelease"
+			name="firstRelease"
+			[(ngModel)]="firstRelease" />
+	</div>
+	<div>
+		<label for="latestRelease">Latest Release</label>
+		<input
+			type="text"
+			id="latestRelease"
+			name="latestRelease"
+			[(ngModel)]="latestRelease" />
+	</div>
+	<button (click)="addLibrary()">Add Library</button>
+</main>

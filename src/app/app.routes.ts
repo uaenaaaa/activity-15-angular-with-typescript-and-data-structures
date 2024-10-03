@@ -17,38 +17,39 @@ import { AnimalsListComponent } from '@app/animals-list/animals-list.component';
 import { ToolListComponent } from '@app/tool-list/tool-list.component';
 import { LanguageListComponent } from '@app/language-list/language-list.component';
 import { GameListComponent } from '@app/game-list/game-list.component';
-import { SoftwareListComponent } from './software-list/software-list.component';
-import { PhoneContactListComponent } from './phone-contact-list/phone-contact-list.component';
-import { MusicPlayListComponent } from './music-play-list/music-play-list.component';
-import { FoodMenuListComponent } from './food-menu-list/food-menu-list.component';
-import { GroceryListComponent } from './grocery-list/grocery-list.component';
-import { ClassroomListComponent } from './classroom-list/classroom-list.component';
-import { InventoryListComponent } from './inventory-list/inventory-list.component';
-import { LectureListComponent } from './lecture-list/lecture-list.component';
-import { StationeryListComponent } from './stationery-list/stationery-list.component';
-import { FlowerListComponent } from './flower-list/flower-list.component';
-import { DestinationListComponent } from './destination-list/destination-list.component';
-import { LaptopListComponent } from './laptop-list/laptop-list.component';
-import { LaptopSpecificationListComponent } from './laptop-specification-list/laptop-specification-list.component';
-import { ComputerHardwareListComponent } from './computer-hardware-list/computer-hardware-list.component';
-import { MobileAppListComponent } from './mobile-app-list/mobile-app-list.component';
-import { VideoListComponent } from './video-list/video-list.component';
-import { TvShowListComponent } from './tv-show-list/tv-show-list.component';
-import { FurnitureListComponent } from './furniture-list/furniture-list.component';
-import { AccessoryListComponent } from './accessory-list/accessory-list.component';
-import { BuildingListComponent } from './building-list/building-list.component';
-import { PaintingListComponent } from './painting-list/painting-list.component';
-import { ArtistListComponent } from './artist-list/artist-list.component';
-import { ComposerListComponent } from './composer-list/composer-list.component';
-import { PodcastListComponent } from './podcast-list/podcast-list.component';
-import { ExerciseListComponent } from './exercise-list/exercise-list.component';
-import { MealPlanListComponent } from './meal-plan-list/meal-plan-list.component';
-import { BudgetListComponent } from './budget-list/budget-list.component';
-import { PresentationListComponent } from './presentation-list/presentation-list.component';
-import { TourListComponent } from './tour-list/tour-list.component';
-import { EventListComponent } from './event-list/event-list.component';
-import { DeveloperToolsListComponent } from './developer-tools-list/developer-tools-list.component';
-import { FrameworkListComponent } from './framework-list/framework-list.component';
+import { SoftwareListComponent } from '@app/software-list/software-list.component';
+import { PhoneContactListComponent } from '@app/phone-contact-list/phone-contact-list.component';
+import { MusicPlayListComponent } from '@app/music-play-list/music-play-list.component';
+import { FoodMenuListComponent } from '@app/food-menu-list/food-menu-list.component';
+import { GroceryListComponent } from '@app/grocery-list/grocery-list.component';
+import { ClassroomListComponent } from '@app/classroom-list/classroom-list.component';
+import { InventoryListComponent } from '@app/inventory-list/inventory-list.component';
+import { LectureListComponent } from '@app/lecture-list/lecture-list.component';
+import { StationeryListComponent } from '@app/stationery-list/stationery-list.component';
+import { FlowerListComponent } from '@app/flower-list/flower-list.component';
+import { DestinationListComponent } from '@app/destination-list/destination-list.component';
+import { LaptopListComponent } from '@app/laptop-list/laptop-list.component';
+import { LaptopSpecificationListComponent } from '@app/laptop-specification-list/laptop-specification-list.component';
+import { ComputerHardwareListComponent } from '@app/computer-hardware-list/computer-hardware-list.component';
+import { MobileAppListComponent } from '@app/mobile-app-list/mobile-app-list.component';
+import { VideoListComponent } from '@app/video-list/video-list.component';
+import { TvShowListComponent } from '@app/tv-show-list/tv-show-list.component';
+import { FurnitureListComponent } from '@app/furniture-list/furniture-list.component';
+import { AccessoryListComponent } from '@app/accessory-list/accessory-list.component';
+import { BuildingListComponent } from '@app/building-list/building-list.component';
+import { PaintingListComponent } from '@app/painting-list/painting-list.component';
+import { ArtistListComponent } from '@app/artist-list/artist-list.component';
+import { ComposerListComponent } from '@app/composer-list/composer-list.component';
+import { PodcastListComponent } from '@app/podcast-list/podcast-list.component';
+import { ExerciseListComponent } from '@app/exercise-list/exercise-list.component';
+import { MealPlanListComponent } from '@app/meal-plan-list/meal-plan-list.component';
+import { BudgetListComponent } from '@app/budget-list/budget-list.component';
+import { PresentationListComponent } from '@app/presentation-list/presentation-list.component';
+import { TourListComponent } from '@app/tour-list/tour-list.component';
+import { EventListComponent } from '@app/event-list/event-list.component';
+import { DeveloperToolsListComponent } from '@app/developer-tools-list/developer-tools-list.component';
+import { FrameworkListComponent } from '@app/framework-list/framework-list.component';
+import { LibraryListComponent } from '@app/library-list/library-list.component';
 
 export const routes: Routes = [
 	{
@@ -295,6 +296,11 @@ export const routes: Routes = [
 		title: 'Framework List',
 		component: FrameworkListComponent,
 		path: 'framework-list',
+	},
+	{
+		title: 'Library List',
+		component: LibraryListComponent,
+		path: 'library-list',
 	},
 ];
 
