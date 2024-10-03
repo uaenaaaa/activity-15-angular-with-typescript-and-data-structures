@@ -23,6 +23,7 @@ import { MusicPlayListComponent } from './music-play-list/music-play-list.compon
 import { FoodMenuListComponent } from './food-menu-list/food-menu-list.component';
 import { GroceryListComponent } from './grocery-list/grocery-list.component';
 import { ClassroomListComponent } from './classroom-list/classroom-list.component';
+import { InventoryListComponent } from './inventory-list/inventory-list.component';
 
 export const routes: Routes = [
 	{
@@ -139,6 +140,11 @@ export const routes: Routes = [
 		title: 'Classroom List',
 		component: ClassroomListComponent,
 		path: 'classroom-list',
+	},
+	{
+		title: 'Inventory List',
+		component: InventoryListComponent,
+		path: 'inventory-list',
 	},
 ];
 
