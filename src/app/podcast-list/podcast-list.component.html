@@ -1,0 +1,55 @@
+<main>
+	<h1>Podcast List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Host</th>
+				<th>Genre</th>
+				<th>Episode Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let podcast of podcasts">
+				<td>{{ podcast.name }}</td>
+				<td>{{ podcast.host }}</td>
+				<td>{{ podcast.genre }}</td>
+				<td>{{ podcast.episodeNumber }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<label for="name">Name</label>
+		<input
+			type="text"
+			id="name"
+			[(ngModel)]="name" />
+	</div>
+	<div>
+		<label for="host">Host</label>
+		<input
+			type="text"
+			id="host"
+			[(ngModel)]="host" />
+	</div>
+
+	<div>
+		<label for="genre">Genre</label>
+		<input
+			type="text"
+			id="genre"
+			[(ngModel)]="genre" />
+	</div>
+
+	<div>
+		<label for="episodeNumber">Episode Number</label>
+		<input
+			type="number"
+			id="episodeNumber"
+			[(ngModel)]="episodeNumber" />
+	</div>
+	<div>
+		<button (click)="addPodcast()">Add Podcast</button>
+	</div>
+</main>
