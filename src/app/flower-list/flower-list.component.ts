@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
 import FlowerList from '@app/interface/flower-list';
+import { FlowerListService } from '@app/services/flower-list/flower-list.service';
 
 @Component({
 	selector: 'app-flower-list',
@@ -11,7 +12,10 @@ import FlowerList from '@app/interface/flower-list';
 	styles: ``,
 })
 export class FlowerListComponent {
-	flowerList: FlowerList[] = [];
+	flowerList = [] as FlowerList[];
+	constructor(private flowerListService: FlowerListService) {
+		this.flowerList = this.flowerListService.getFlowers();
+	}
 
 	id: number = 0;
 	name: string = '';
@@ -21,14 +25,14 @@ export class FlowerListComponent {
 	quantity: number = 0;
 
 	addFlower() {
-		this.flowerList.push({
-			id: this.id,
-			name: this.name,
-			description: this.description,
-			price: this.price,
-			isAvailable: Boolean(this.isAvailable),
-			quantity: this.quantity,
-		});
+		this.flowerListService.addFlower(
+			this.id,
+			this.name,
+			this.price,
+			this.quantity,
+			this.description,
+			this.isAvailable,
+		);
 
 		this.id = 0;
 		this.name = '';
