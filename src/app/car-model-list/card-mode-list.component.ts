@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import CarModel from '@app/interface/car-model';
+import { CarModelListService } from '@app/services/car-model-list/car-model-list.service';
 
 @Component({
 	selector: 'app-card-model-list',
@@ -11,8 +12,11 @@ import CarModel from '@app/interface/car-model';
 	styles: ``,
 })
 export class CarModelListComponent {
-	carModels: CarModel[] = [];
-	id: string = '';
+	carModels = [] as CarModel[];
+	constructor(private carModelService: CarModelListService) {
+		this.carModels = this.carModelService.getCarModels();
+	}
+	id: number = 0;
 	name: string = '';
 	year: number = 0;
 	make: string = '';
@@ -20,16 +24,16 @@ export class CarModelListComponent {
 	price: number = 0;
 
 	addCarModel(): void {
-		this.carModels.push({
-			id: Number(this.id),
-			name: this.name,
-			year: this.year,
-			make: this.make,
-			model: this.model,
-			price: this.price,
-		});
+		this.carModelService.addCarModel(
+			this.id,
+			this.name,
+			this.year,
+			this.make,
+			this.model,
+			this.price,
+		);
 
-		this.id = '';
+		this.id = 0;
 		this.name = '';
 		this.year = 0;
 		this.make = '';
