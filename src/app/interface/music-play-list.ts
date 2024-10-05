@@ -3,7 +3,7 @@ export default interface MusicPlayList {
 	name: string;
 	artist: string;
 	album: string;
-	duration: string;
+	duration: number;
 	genre: string;
-	year: string;
+	year: number;
 }
