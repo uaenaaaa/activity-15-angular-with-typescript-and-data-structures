@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EmployeeList } from '@app/interface/employee-list';
+import { EmployeeListService } from '@app/services/employee-list/employee-list.service';
 
 @Component({
 	selector: 'app-employee-list',
@@ -11,7 +12,10 @@ import { EmployeeList } from '@app/interface/employee-list';
 	styles: ``,
 })
 export class EmployeeListComponent {
-	employees: EmployeeList[] = [];
+	employees = [] as EmployeeList[];
+	constructor(private employeeListService: EmployeeListService) {
+		this.employees = this.employeeListService.getEmployees();
+	}
 
 	id: string = '';
 	name: string = '';
@@ -19,12 +23,12 @@ export class EmployeeListComponent {
 	age: number = 0;
 
 	addEmployee(): void {
-		this.employees.push({
-			id: this.id,
-			name: this.name,
-			position: this.position,
-			age: this.age,
-		});
+		this.employeeListService.addEmployee(
+			this.id,
+			this.name,
+			this.position,
+			this.age,
+		);
 
 		this.age = 0;
 		this.position = '';

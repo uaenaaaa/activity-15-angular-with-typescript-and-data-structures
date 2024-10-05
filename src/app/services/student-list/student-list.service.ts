@@ -5,7 +5,7 @@ import StudentList from '@app/interface/student-list';
 	providedIn: 'root',
 })
 export class StudentListService {
-	students: StudentList[] = [];
+	private students: StudentList[] = [];
 
 	constructor() {}
 
@@ -18,7 +18,7 @@ export class StudentListService {
 		});
 	}
 
-    getStudents(): StudentList[] {
-        return this.students;
-    }
+	getStudents(): StudentList[] {
+		return this.students;
+	}
 }

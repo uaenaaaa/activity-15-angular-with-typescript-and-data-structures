@@ -11,10 +11,10 @@ import StudentList from '@app/interface/student-list';
 	templateUrl: './student-list.component.html',
 })
 export class StudentListComponent {
+	students = [] as StudentList[];
 	constructor(private studentListService: StudentListService) {
 		this.students = this.studentListService.getStudents();
 	}
-	students: StudentList[] = [];
 	id: string = '';
 	name: string = '';
 	grade: string = '';
