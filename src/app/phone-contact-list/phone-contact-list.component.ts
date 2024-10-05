@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import PhoneContactList from '@app/interface/phone-contact-list';
+import { PhoneContactListService } from '@app/services/phone-contact-list/phone-contact-list.service';
 
 @Component({
 	selector: 'app-phone-contact-list',
@@ -11,21 +12,24 @@ import PhoneContactList from '@app/interface/phone-contact-list';
 	styles: ``,
 })
 export class PhoneContactListComponent {
-	phoneContactList: PhoneContactList[] = [];
-	id: string = '';
+	phoneContactList = [] as PhoneContactList[];
+	constructor(private phoneContactListService: PhoneContactListService) {
+		this.phoneContactList = this.phoneContactListService.getPhoneContacts();
+	}
+	id: number = 0;
 	name: string = '';
 	email: string = '';
 	phone: string = '';
 
 	addPhoneContact(): void {
-		this.phoneContactList.push({
-			id: Number(this.id),
-			name: this.name,
-			email: this.email,
-			phone: this.phone,
-		});
+		this.phoneContactListService.addPhoneContact(
+			this.id,
+			this.name,
+			this.email,
+			this.phone,
+		);
 
-		this.id = '';
+		this.id = 0;
 		this.name = '';
 		this.email = '';
 		this.phone = '';
