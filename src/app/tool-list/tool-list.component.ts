@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Tool from '@app/interface/tool-list';
+import { ToolListService } from '@app/services/tool-list/tool-list.service';
 
 @Component({
 	selector: 'app-tool-list',
@@ -11,27 +12,30 @@ import Tool from '@app/interface/tool-list';
 	styles: ``,
 })
 export class ToolListComponent {
-	tools: Tool[] = [];
+	tools = [] as Tool[];
+	constructor(private toolService: ToolListService) {
+		this.tools = this.toolService.getTools();
+	}
 
-	id: string = '';
+	id: number = 0;
 	name: string = '';
 	description: string = '';
-	price: string = '';
-	quantity: string = '';
+	price: number = 0;
+	quantity: number = 0;
 
 	addTool(): void {
-		this.tools.push({
-			id: Number(this.id),
-			name: this.name,
-			description: this.description,
-			price: Number(this.price),
-			quantity: Number(this.quantity),
-		});
+		this.toolService.addTool(
+			this.id,
+			this.name,
+			this.description,
+			this.price,
+			this.quantity,
+		);
 
-		this.id = '';
+		this.id = 0;
 		this.name = '';
 		this.description = '';
-		this.price = '';
-		this.quantity = '';
+		this.price = 0;
+		this.quantity = 0;
 	}
 }
