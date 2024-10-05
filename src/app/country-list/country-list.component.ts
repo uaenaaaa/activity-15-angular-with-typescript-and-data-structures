@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Country from '@app/interface/country-list';
+import { CountryListService } from '@app/services/country-list/country-list.service';
 
 @Component({
 	selector: 'app-country-list',
@@ -11,24 +12,27 @@ import Country from '@app/interface/country-list';
 	styles: ``,
 })
 export class CountryListComponent {
-	countries: Country[] = [];
+	countries = [] as Country[];
+	constructor(private countryListService: CountryListService) {
+		this.countries = this.countryListService.getCountries();
+	}
 
-	id: string = '';
+	id: number = 0;
 	name: string = '';
 	capital: string = '';
-	population: string = '';
+	population: number = 0;
 
 	addCountry(): void {
-		this.countries.push({
-			id: Number(this.id),
-			name: this.name,
-			capital: this.capital,
-			population: Number(this.population),
-		});
+		this.countryListService.addCountry(
+			this.id,
+			this.name,
+			this.capital,
+			this.population,
+		);
 
-		this.id = '';
+		this.id = 0;
 		this.name = '';
 		this.capital = '';
-		this.population = '';
+		this.population = 0;
 	}
 }
