@@ -1,6 +1,7 @@
 import { NgForOf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { StudentListService } from '@app/services/student-list/student-list.service';
 import StudentList from '@app/interface/student-list';
 
 @Component({
@@ -10,6 +11,9 @@ import StudentList from '@app/interface/student-list';
 	templateUrl: './student-list.component.html',
 })
 export class StudentListComponent {
+	constructor(private studentListService: StudentListService) {
+		this.students = this.studentListService.getStudents();
+	}
 	students: StudentList[] = [];
 	id: string = '';
 	name: string = '';
@@ -17,13 +21,12 @@ export class StudentListComponent {
 	age: number = 0;
 
 	addStudent(): void {
-		this.students.push({
-			id: this.id,
-			name: this.name,
-			grade: this.grade,
-			age: this.age,
-		});
-
+		this.studentListService.addStudent(
+			this.id,
+			this.name,
+			this.grade,
+			this.age,
+		);
 		this.age = 0;
 		this.grade = '';
 		this.id = '';
