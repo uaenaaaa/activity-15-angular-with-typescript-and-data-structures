@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MealPlanListService } from '@app/services/meal-plan-list/meal-plan-list.service';
 import MealPlanList from '@app/interface/meal-plan-list';
 
 @Component({
@@ -11,7 +12,10 @@ import MealPlanList from '@app/interface/meal-plan-list';
 	styles: ``,
 })
 export class MealPlanListComponent {
-	meals: MealPlanList[] = [];
+	meals = [] as MealPlanList[];
+	constructor(private mealPlanService: MealPlanListService) {
+		this.meals = this.mealPlanService.getMeals();
+	}
 
 	name: string = '';
 	breakfast: string = '';
@@ -21,14 +25,14 @@ export class MealPlanListComponent {
 	drink: string = '';
 
 	addMealPlan() {
-		this.meals.push({
-			name: this.name,
-			breakfast: this.breakfast,
-			lunch: this.lunch,
-			dinner: this.dinner,
-			snack: this.snack,
-			drink: this.drink,
-		});
+		this.mealPlanService.addMealPlan(
+			this.name,
+			this.breakfast,
+			this.lunch,
+			this.dinner,
+			this.snack,
+			this.drink,
+		);
 
 		this.name = '';
 		this.breakfast = '';
