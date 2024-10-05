@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import ExerciseList from '@app/interface/exercise-list';
+import { ExerciseListService } from '@app/services/exercise-list/exercise-list.service';
 
 @Component({
 	selector: 'app-exercise-list',
@@ -11,19 +12,22 @@ import ExerciseList from '@app/interface/exercise-list';
 	styles: ``,
 })
 export class ExerciseListComponent {
-	exercises: ExerciseList[] = [];
+	exercises = [] as ExerciseList[];
+	constructor(private exerciseService: ExerciseListService) {
+		this.exercises = this.exerciseService.getExercises();
+	}
 	name: string = '';
 	sets: number = 0;
 	reps: number = 0;
 	weight: number = 0;
 
 	addExercise() {
-		this.exercises.push({
-			name: this.name,
-			sets: this.sets,
-			reps: this.reps,
-			weight: this.weight,
-		});
+		this.exerciseService.addExercise(
+			this.name,
+			this.sets,
+			this.reps,
+			this.weight,
+		);
 
 		this.name = '';
 		this.sets = 0;
