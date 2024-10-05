@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
 import DestinationList from '@app/interface/destination-list';
+import { DestinationListService } from '@app/services/desination-list/destination-list.service';
 
 @Component({
 	selector: 'app-destination-list',
@@ -11,7 +12,10 @@ import DestinationList from '@app/interface/destination-list';
 	styles: ``,
 })
 export class DestinationListComponent {
-	destinations: DestinationList[] = [];
+	destinations = [] as DestinationList[];
+	constructor(private destinationListService: DestinationListService) {
+		this.destinations = this.destinationListService.getDestinations();
+	}
 
 	id: number = 0;
 	name: string = '';
@@ -19,12 +23,12 @@ export class DestinationListComponent {
 	location: string = '';
 
 	addDestination() {
-		this.destinations.push({
-			id: this.id,
-			name: this.name,
-			description: this.description,
-			location: this.location,
-		});
+		this.destinationListService.addDestination(
+			this.id,
+			this.name,
+			this.description,
+			this.location,
+		);
 
 		this.id = 0;
 		this.name = '';
