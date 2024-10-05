@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import ArtistList from '@app/interface/artist-list';
+import { ArtistListService } from '@app/services/artist-list/artist-list.service';
 
 @Component({
 	selector: 'app-artist-list',
@@ -11,7 +12,10 @@ import ArtistList from '@app/interface/artist-list';
 	styles: ``,
 })
 export class ArtistListComponent {
-	artistList: ArtistList[] = [];
+	artistList = [] as ArtistList[];
+	constructor(private artistService: ArtistListService) {
+		this.artistList = this.artistService.getArtists();
+	}
 
 	name: string = '';
 	field: string = '';
@@ -19,12 +23,12 @@ export class ArtistListComponent {
 	country: string = '';
 
 	addArtist() {
-		this.artistList.push({
-			name: this.name,
-			field: this.field,
-			genre: this.genre,
-			country: this.country,
-		});
+		this.artistService.addArtist(
+			this.name,
+			this.field,
+			this.genre,
+			this.country,
+		);
 		this.name = '';
 		this.field = '';
 		this.genre = '';
