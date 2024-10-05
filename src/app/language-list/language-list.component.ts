@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Language from '@app/interface/language-list';
+import { LanguageListService } from '@app/services/language-list/language-list.service';
 
 @Component({
 	selector: 'app-language-list',
@@ -11,22 +12,25 @@ import Language from '@app/interface/language-list';
 	styles: ``,
 })
 export class LanguageListComponent {
-	languages: Language[] = [];
+	languages = [] as Language[];
+	constructor(private languageService: LanguageListService) {
+		this.languages = this.languageService.getLanguages();
+	}
 
-	id: string = '';
+	id: number = 0;
 	name: string = '';
 	description: string = '';
 	origin: string = '';
 
 	addLanguage(): void {
-		this.languages.push({
-			id: Number(this.id),
-			name: this.name,
-			description: this.description,
-			origin: this.origin,
-		});
+		this.languageService.addLanguage(
+			this.id,
+			this.name,
+			this.description,
+			this.origin,
+		);
 
-		this.id = '';
+		this.id = 0;
 		this.name = '';
 		this.description = '';
 		this.origin = '';
