@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import PresentationList from '@app/interface/presentation-list';
+import { PresentationListService } from '@app/services/presentation-list/presentation-list.service';
 
 @Component({
 	selector: 'app-presentation-list',
@@ -11,7 +12,10 @@ import PresentationList from '@app/interface/presentation-list';
 	styles: ``,
 })
 export class PresentationListComponent {
-	presentations: PresentationList[] = [];
+	presentations = [] as PresentationList[];
+	constructor(private presentationService: PresentationListService) {
+		this.presentations = this.presentationService.getPresentations();
+	}
 
 	topic: string = '';
 	presenter: string = '';
@@ -19,12 +23,12 @@ export class PresentationListComponent {
 	time: string = '';
 
 	addPresentation() {
-		this.presentations.push({
-			topic: this.topic,
-			presenter: this.presenter,
-			date: this.date,
-			time: this.time,
-		});
+		this.presentationService.addPresentation(
+			this.topic,
+			this.presenter,
+			this.date,
+			this.time,
+		);
 
 		this.topic = '';
 		this.presenter = '';
