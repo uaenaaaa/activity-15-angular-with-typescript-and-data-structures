@@ -2,6 +2,7 @@ import { NgForOf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import DeveloperToolsList from '@app/interface/developer-tools-list';
+import { DeveloperToolsListService } from '@app/services/developer-tools-list/developer-tools-list.service';
 
 @Component({
 	selector: 'app-developer-tools-list',
@@ -11,7 +12,10 @@ import DeveloperToolsList from '@app/interface/developer-tools-list';
 	styles: ``,
 })
 export class DeveloperToolsListComponent {
-	developerTools: DeveloperToolsList[] = [];
+	developerTools = [] as DeveloperToolsList[];
+	constructor(private developerToolsService: DeveloperToolsListService) {
+		this.developerTools = this.developerToolsService.getDeveloperTools();
+	}
 
 	toolName: string = '';
 	toolDescription: string = '';
@@ -19,12 +23,12 @@ export class DeveloperToolsListComponent {
 	toolDuration: string = '';
 
 	addDeveloperTool() {
-		this.developerTools.push({
-			toolName: this.toolName,
-			toolDescription: this.toolDescription,
-			toolPrice: this.toolPrice,
-			toolDuration: this.toolDuration,
-		});
+		this.developerToolsService.addDeveloperTool(
+			this.toolName,
+			this.toolDescription,
+			this.toolPrice,
+			this.toolDuration,
+		);
 
 		this.toolName = '';
 		this.toolDescription = '';
