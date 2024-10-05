@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import ClassroomList from '@app/interface/classroom-list';
+import { ClassroomListService } from '@app/services/classroom-list/classroom-list.service';
 
 @Component({
 	selector: 'app-classroom-list',
@@ -11,7 +12,10 @@ import ClassroomList from '@app/interface/classroom-list';
 	styles: ``,
 })
 export class ClassroomListComponent {
-	classroomList: ClassroomList[] = [];
+	classroomList = [] as ClassroomList[];
+	constructor(private classroomService: ClassroomListService) {
+		this.classroomList = this.classroomService.getClassrooms();
+	}
 
 	id: number = 0;
 	name: string = '';
@@ -19,12 +23,12 @@ export class ClassroomListComponent {
 	studentCount: number = 0;
 
 	addNewClassroom() {
-		this.classroomList.push({
-			id: this.id,
-			name: this.name,
-			teacher: this.teacher,
-			studentCount: this.studentCount,
-		});
+		this.classroomService.addClassroom(
+			this.id,
+			this.name,
+			this.teacher,
+			this.studentCount,
+		);
 		this.id = 0;
 		this.name = '';
 		this.teacher = '';
