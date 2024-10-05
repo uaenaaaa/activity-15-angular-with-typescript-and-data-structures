@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import PodcastList from '@app/interface/podcast-list';
+import { PodcastListService } from '@app/services/podcast-list/podcast-list.service';
 
 @Component({
 	selector: 'app-podcast-list',
@@ -11,7 +12,10 @@ import PodcastList from '@app/interface/podcast-list';
 	styles: ``,
 })
 export class PodcastListComponent {
-	podcasts: PodcastList[] = [];
+	podcasts = [] as PodcastList[];
+	constructor(private podcastService: PodcastListService) {
+		this.podcasts = this.podcastService.getPodcasts();
+	}
 
 	name: string = '';
 	host: string = '';
@@ -19,12 +23,12 @@ export class PodcastListComponent {
 	episodeNumber: number = 0;
 
 	addPodcast() {
-		this.podcasts.push({
-			name: this.name,
-			host: this.host,
-			genre: this.genre,
-			episodeNumber: this.episodeNumber,
-		});
+		this.podcastService.addPodcast(
+			this.name,
+			this.host,
+			this.genre,
+			this.episodeNumber,
+		);
 
 		this.name = '';
 		this.host = '';
