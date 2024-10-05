@@ -13,7 +13,7 @@ export class ArtistListService {
 		name: string,
 		field: string,
 		genre: string,
-		country: string,
+    country: string,
 	): void {
 		this.artists.push({
 			name: name,

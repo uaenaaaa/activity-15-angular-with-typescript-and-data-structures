@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import ComposerList from '@app/interface/composer-list';
+import { ComposerListService } from '@app/services/composer-list/composer-list.service';
+
 @Component({
 	selector: 'app-composer-list',
 	standalone: true,
@@ -10,7 +12,10 @@ import ComposerList from '@app/interface/composer-list';
 	styles: ``,
 })
 export class ComposerListComponent {
-	composers: ComposerList[] = [];
+	composers = [] as ComposerList[];
+	constructor(private composerService: ComposerListService) {
+		this.composers = this.composerService.getComposers();
+	}
 
 	name: string = '';
 	popularMusic: string = '';
@@ -18,12 +23,12 @@ export class ComposerListComponent {
 	country: string = '';
 
 	addComposer() {
-		this.composers.push({
-			name: this.name,
-			popularMusic: this.popularMusic,
-			genre: this.genre,
-			country: this.country,
-		});
+		this.composerService.addComposer(
+			this.name,
+			this.popularMusic,
+			this.genre,
+			this.country,
+		);
 
 		this.name = '';
 		this.popularMusic = '';
